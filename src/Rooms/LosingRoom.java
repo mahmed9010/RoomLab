@@ -4,6 +4,7 @@ import Game.Runner;
 import People.Person;
 
 public class LosingRoom extends Room {
+
     public LosingRoom(int x, int y) {
         super(x, y);
 
@@ -19,7 +20,7 @@ public class LosingRoom extends Room {
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
-        System.out.println("You found the winning room! Ten points for Gryffindor.");
+        System.out.println("You entered a death trap. You lost. =(");
         Runner.gameOff();
     }
 
