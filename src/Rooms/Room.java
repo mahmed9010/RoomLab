@@ -4,12 +4,13 @@ import People.Person;
 
 public class Room {
 	Person occupant;
-	int xLoc,yLoc;
+	int xLoc,yLoc,zLoc;
 	
-	public Room(int x, int y)
+	public Room(int x, int y, int z)
 	{
 		xLoc = x;
 		yLoc = y;
+		zLoc = z;
 	}
 
 	/**
@@ -18,10 +19,11 @@ public class Room {
 	 */
 	public void enterRoom(Person x)
 	{
-		System.out.println("You enter a plain old room");
+		System.out.println("You have entered the Labrinth. To exit you must defeat the dragon on the last floor.");
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
+		x.setzLoc(this.zLoc);
 	}
 
 	/**

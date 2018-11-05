@@ -13,18 +13,18 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{
-		Room[][] building = new Room[5][5];
+		Room[][][] building = new Room[5][5][5];
 		
 		//Fill the building with normal rooms
-		for (int x = 0; x<building.length; x++)
-		{
-			for (int y = 0; y < building[x].length; y++)
-			{
-				building[x][y] = new Room(x,y);
+		for (int z = 0;z<building.length;z++) {
+			for (int x = 0; x < building.length; x++) {
+				for (int y = 0; y < building[x].length; y++) {
+					building[z][x][y] = new Room(x, y, z);
+				}
 			}
 		}
 		
-		//Create a random winning room.
+		/*//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
 		building[x][y] = new WinningRoom(x, y);
@@ -40,11 +40,16 @@ public class Runner {
 				b = (int)(Math.random()*building.length);
 			}
 		}
-		building[a][b] = new LosingRoom(a, b);
+		building[a][b] = new LosingRoom(a, b);*/
+
+
 
 		 //Setup player 1 and the input scanner
-		Person player1 = new Person("FirstName", "FamilyName", 0,0);
-		building[0][0].enterRoom(player1);
+		Scanner name = new Scanner(System.in);
+		System.out.println("Hello player, what is your name?");
+		name.nextLine();
+		Person player1 = new Person("name", 0, 0,0);
+		building[0][0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
 		{
@@ -56,7 +61,7 @@ public class Runner {
 				
 			}
 			else {
-				System.out.println("Please choose a valid move.");
+				System.out.println("You run into the wall");
 			}
 			
 			
