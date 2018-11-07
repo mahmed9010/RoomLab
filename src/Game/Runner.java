@@ -48,7 +48,7 @@ public class Runner {
 		Scanner name = new Scanner(System.in);
 		System.out.println("Hello player, what is your name?");
 		name.nextLine();
-		Person player1 = new Person("name", 0, 0,0);
+		Person player1 = new Person("name", 0, 0,0,5,5);
 		building[0][0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
@@ -57,7 +57,7 @@ public class Runner {
 			String move = in.nextLine();
 			if(validMove(move, player1, building))
 			{
-				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc() + "");
 				
 			}
 			else {
