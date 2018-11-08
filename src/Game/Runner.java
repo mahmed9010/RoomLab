@@ -1,6 +1,7 @@
 package Game;
 
 import People.Person;
+import People.Monsters;
 import Rooms.Room;
 import Rooms.WinningRoom;
 import Rooms.LosingRoom;
