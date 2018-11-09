@@ -5,7 +5,7 @@ package People;
  */
 public class Person {
 	String playerName;
-	int xLoc, yLoc, zLoc, attack, defense, health;
+	int xLoc, yLoc, zLoc, attack, defense, health, maxHealth;
 
 
 	public int getxLoc() {
@@ -40,8 +40,11 @@ public class Person {
 
 	public void setHealth(int health) { this.health = health; }
 
+	public int getMaxHealth(){return maxHealth;}
 
-	public Person (String playerName, int xLoc, int yLoc, int zLoc, int attack, int defense)
+	public void setMaxHealth(int maxHealth) { this.maxHealth = maxHealth; }
+
+	public Person (String playerName, int xLoc, int yLoc, int zLoc, int attack, int defense, int health, int maxHealth)
 	{
 		this.playerName = playerName;
 		this.xLoc = xLoc;
@@ -49,6 +52,8 @@ public class Person {
 		this.zLoc = zLoc;
 		this.attack = attack;
 		this.defense = defense;
+		this.health = health;
+		this.maxHealth = maxHealth;
 	}
 
 

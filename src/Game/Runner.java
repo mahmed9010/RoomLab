@@ -1,10 +1,8 @@
 package Game;
 
 import People.Person;
-import People.Monsters;
 import Rooms.Room;
-import Rooms.WinningRoom;
-import Rooms.LosingRoom;
+
 import java.util.Scanner;
 
 public class Runner {
@@ -24,32 +22,13 @@ public class Runner {
 				}
 			}
 		}
-		
-		/*//Create a random winning room.
-		int x = (int)(Math.random()*building.length);
-		int y = (int)(Math.random()*building.length);
-		building[x][y] = new WinningRoom(x, y);
-
-		//Create a random losing room
-		int a = (int)(Math.random()*building.length);
-		int b = (int)(Math.random()*building.length);
-		if(a == x || b == y)
-		{
-			while(a == x || b == y)
-			{
-				a = (int)(Math.random()*building.length);
-				b = (int)(Math.random()*building.length);
-			}
-		}
-		building[a][b] = new LosingRoom(a, b);*/
-
 
 
 		 //Setup player 1 and the input scanner
 		Scanner name = new Scanner(System.in);
 		System.out.println("Hello player, what is your name?");
 		name.nextLine();
-		Person player1 = new Person("name", 0, 0,0,5,5);
+		Person player1 = new Person(name, 0, 0,0,5,5,10,10);
 		building[0][0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
